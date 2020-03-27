@@ -1,0 +1,5 @@
+.vscode/
+SDL2/SDL2-2.0.10/*
+SDL2/SDL2_Image-2.0.5/*
+build/*
+!*.gitkeep
