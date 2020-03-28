@@ -94,3 +94,8 @@ if (WIN32)
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/SDL2/SDL2_Image-2.0.5/lib/x64/libpng16-16.dll ${CMAKE_BINARY_DIR}/$<CONFIGURATION>
     )
 endif ()
+
+target_compile_definitions(
+    Breakout
+    PUBLIC ASSETS_ROOT="${CMAKE_SOURCE_DIR}/Assets/"
+)

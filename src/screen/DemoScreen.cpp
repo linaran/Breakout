@@ -18,7 +18,7 @@ screen::DemoScreen::DemoScreen(
 void screen::DemoScreen::start()
 {
 	auto worldPosition = spaceConverter.screenToWorld(100.f, 100.f);
-	ballEntity = createBall(worldPosition.x, worldPosition.y, "Textures/ball.png");
+	ballEntity = createBall(worldPosition.x, worldPosition.y, "ball.png");
 }
 
 void screen::DemoScreen::end()

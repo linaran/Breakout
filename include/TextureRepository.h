@@ -13,6 +13,7 @@ namespace repository {
 		resource::TextureHandle load(entt::hashed_string textureId, std::string path);
 
 	private:
+		std::string texturesRoot;
 		resource::TextureCache& textureCache;
 		SDL_Renderer* renderer;
 	};
