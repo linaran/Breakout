@@ -72,6 +72,11 @@ set_target_properties(
 add_subdirectory(box2d)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/sdl2-cmake-modules/")
+
+if (WIN32)
+    set(SDL2_PATH "${CMAKE_SOURCE_DIR}/SDL2/SDL2-2.0.10" CACHE BOOL "" FORCE)
+    set(SDL2_IMAGE_PATH "${CMAKE_SOURCE_DIR}/SDL2/SDL2_Image-2.0.5" CACHE BOOL "" FORCE)
+endif()
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 
