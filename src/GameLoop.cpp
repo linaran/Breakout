@@ -23,6 +23,7 @@ void mainLoop::loop(injection::MainContainer& mainContainer)
 	screenManager.showScreen<screen::DemoScreen>(
 		mainContainer.textureRepository(),
 		mainContainer.dynamicBodyFactory,
+		mainContainer.staticBodyFactory,
 		mainContainer.spaceConverter(),
 		registry
 		);

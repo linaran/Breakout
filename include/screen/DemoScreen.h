@@ -3,6 +3,7 @@
 #include "SDL.h"
 #include "Texture.h"
 #include "DynamicBodyFactory.h"
+#include "StaticBodyFactory.h"
 #include "entt.hpp"
 #include "Screen.h"
 #include "TextureRepository.h"
@@ -16,6 +17,7 @@ namespace screen
 		DemoScreen(
 			repository::TextureRepository& textureRepository,
 			factory::DynamicBodyFactory* dynamicBodyFactory,
+			factory::StaticBodyFactory* staticBodyFactory,
 			converter::SpaceConverter& spaceConverter,
 			entt::registry& registry
 		);
@@ -31,6 +33,7 @@ namespace screen
 	private:
 		repository::TextureRepository& textureRepository;
 		factory::DynamicBodyFactory* dynamicBodyFactory;
+		factory::StaticBodyFactory* staticBodyFactory;
 		converter::SpaceConverter& spaceConverter;
 		entt::registry& registry;
 
@@ -40,6 +43,13 @@ namespace screen
 			const float x,
 			const float y,
 			std::string texturePath
+		);
+
+		void setupGround(
+			const float x, 
+			const float y, 
+			const float halfWidth, 
+			const float halfHeight
 		);
 	};
 }
