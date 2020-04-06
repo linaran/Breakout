@@ -1,9 +1,12 @@
 #pragma once
 #include "SDL_events.h"
+#include "entt.hpp"
 
-namespace eventLoop 
+namespace eventLoop
 {
 	static SDL_Event event;
 
-	bool pollEvents();
+	bool pollEvents(entt::dispatcher& dispatcher);
+
+	void onWindowEvent(entt::dispatcher& dispatcher);
 }

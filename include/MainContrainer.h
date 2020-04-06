@@ -29,6 +29,8 @@ namespace injection
 
 		entt::registry& registry();
 
+		entt::dispatcher& dispatcher();
+
 		resource::TextureCache& textureCache();
 
 		repository::TextureRepository& textureRepository();
@@ -42,8 +44,9 @@ namespace injection
 		// and returned through getters.
 
 		GameWindow _gameWindow;
-		converter::SpaceConverter _spaceConverter;
 		entt::registry _registry;
+		entt::dispatcher _dispatcher;
+		converter::SpaceConverter _spaceConverter;
 		resource::TextureCache _textureCache;
 		screen::ScreenManager _screenManager;
 		repository::TextureRepository _textureRepository;

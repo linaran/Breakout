@@ -1,6 +1,8 @@
 #pragma once
 #include "SDL.h"
 #include "Components.h"
+#include "WindowEvent.h"
+#include "entt.hpp"
 
 namespace converter
 {
@@ -12,14 +14,16 @@ namespace converter
 	class SpaceConverter
 	{
 	public:
-		SpaceConverter(const int screenWidth, const int screenHeight);
+		SpaceConverter(const size_t screenWidth, const size_t screenHeight, entt::dispatcher &dispatcher);
 
 		component::Position2D screenToWorld(const float x, const float y) const;
 
 		component::Position2D worldToScreen(const float x, const float y) const;
 
+		void onNewWindowSize(const windowEvent::NewWindowSizeEvent& event);
+
 	private:
-		const int screenWidth;
-		const int screenHeight;
+		int screenWidth;
+		int screenHeight;
 	};
 }

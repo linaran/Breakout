@@ -13,7 +13,7 @@ GameWindow::GameWindow(const std::string& windowName, const size_t windowWidth, 
 		SDL_WINDOWPOS_UNDEFINED,
 		windowWidth,
 		windowHeight,
-		SDL_WINDOW_SHOWN
+		SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE
 	);
 	mAssert(_window != nullptr, std::string("Window could not be created! SDL_Error: ") + SDL_GetError());
 

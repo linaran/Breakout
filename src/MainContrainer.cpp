@@ -3,7 +3,7 @@
 injection::MainContainer::MainContainer(const std::string& windowName) 
 	: _gameWindow(GameWindow(windowName))
 	, world(new b2World(b2Vec2(0.0f, -10.0f)))
-	, _spaceConverter(_gameWindow.windowWidth, _gameWindow.windowWidth)
+	, _spaceConverter(_gameWindow.windowWidth, _gameWindow.windowWidth, _dispatcher)
 	, staticBodyFactory(new factory::StaticBodyFactory(world))
 	, dynamicBodyFactory(new factory::DynamicBodyFactory(world))
 	, _textureRepository(repository::TextureRepository(_textureCache, _gameWindow.renderer()))
@@ -34,6 +34,11 @@ converter::SpaceConverter& injection::MainContainer::spaceConverter()
 entt::registry& injection::MainContainer::registry()
 {
 	return _registry;
+}
+
+entt::dispatcher& injection::MainContainer::dispatcher()
+{
+	return _dispatcher;
 }
 
 resource::TextureCache& injection::MainContainer::textureCache()

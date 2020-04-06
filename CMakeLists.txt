@@ -25,6 +25,7 @@ set(
 
 set(
     BREAKOUT_HEADER_FILES
+    include/WindowEvent.h
     include/component/Components.h
     include/EventLoop.h
     include/factory/DynamicBodyFactory.h

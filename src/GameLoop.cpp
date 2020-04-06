@@ -14,8 +14,10 @@ void mainLoop::loop(injection::MainContainer& mainContainer)
 	using namespace placeholders;
 
 	// TODO: Decide, local vars or access from mainContainer
+	// TODO: Perfect forwarding for references coming from mainContainer
 	b2World* world = mainContainer.world;
 	entt::registry& registry = mainContainer.registry();
+	entt::dispatcher& dispatcher = mainContainer.dispatcher();
 	GameWindow& gameWindow = mainContainer.gameWindow();
 	screen::ScreenManager& screenManager = mainContainer.screenManager();
 
@@ -43,7 +45,7 @@ void mainLoop::loop(injection::MainContainer& mainContainer)
 		frameStart = high_resolution_clock::now();
 
 		// Event loop.
-		quitLoop = eventLoop::pollEvents();
+		quitLoop = eventLoop::pollEvents(dispatcher);
 
 		// Possible screen management if needed
 		// TODO:
